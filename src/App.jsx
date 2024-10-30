@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const api = import.meta.env.VITE_REACT_API_PAY;
 
 //Website Url
-const webUrl = "http://localhost:5173";
+const webUrl = "https://pay-app-two.vercel.app";
 
 export default function App() {
   const [inputNumber, setInputNumber] = useState("");
@@ -21,7 +21,7 @@ export default function App() {
   const handlePay = (e) => {
     e.preventDefault();
 
-    let payOut = `${api}/transact/${inputNumber}/${amount}/${api}`;
+    let payOut = `${api}/transact/${inputNumber}/${amount}/${webUrl}`;
 
     console.log(payOut);
 
