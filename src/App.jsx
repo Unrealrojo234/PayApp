@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const api = import.meta.env.VITE_REACT_API_PAY;
 
 //Website Url
-const webUrl = "https://pay-app-two.vercel.app";
+const webUrl = "pay-app-two.vercel.app";
 
 export default function App() {
   const [inputNumber, setInputNumber] = useState("");
