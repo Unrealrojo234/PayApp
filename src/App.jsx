@@ -23,8 +23,6 @@ export default function App() {
 
     let payOut = `${api}/transact/${inputNumber}/${amount}/${webUrl}`;
 
-    console.log(payOut);
-
     fetch(payOut)
       .then((res) => res.json())
       .then((data) => console.log(data))
