@@ -45,7 +45,10 @@ export default function App() {
     fetch(payOut)
       .then((res) => res.json())
       .then((data) => {
-        if (data.invoice.state == "PENDING") {
+        if (
+          data.invoice.state == "PENDING" ||
+          data.invoice.state == "PROCESSING"
+        ) {
           $("#loader-container").css("visibility", "visible");
 
           invoiceId.current = data.invoice.invoice_id;
@@ -66,7 +69,8 @@ export default function App() {
                   if (
                     status.current.invoice.state != "PROCESSING" ||
                     status.current.invoice.failed_reason ==
-                      "Request cancelled by user"
+                      "Request cancelled by user" ||
+                    status.current.invoice.state != "PENDING"
                   ) {
                     $("#loader-container").css("visibility", "hidden");
                   }
